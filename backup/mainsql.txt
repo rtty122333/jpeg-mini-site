@@ -1,0 +1,41 @@
+create table if not exists comment(
+id int(11) not null auto_increment,
+name varchar(16) not null,
+email varchar(50),
+content text not null,
+content_time datetime not null,
+primary key (id)
+)engine=myisam default charset=utf8 auto_increment=1;
+
+create table if not exists user(
+id int(11) not null auto_increment,
+username varchar(20) not null,
+pwd varchar(20) not null,
+email varchar(50) not null,
+lasttime datetime not null,
+regtime datetime not null,
+primary key (id)
+)engine=myisam default charset=utf8 auto_increment=1;
+
+create table if not exists picture(
+id int(11) not null auto_increment,
+userid int(11) not null,
+filename varchar(100) not null,
+des varchar(64) not null,
+fsize varchar(10) not null,
+ftype varchar(100) not null,
+utime datetime not null,
+primary key (id,userid)
+)engine=myisam default charset=utf8 auto_increment=1;
+
+alter table picture add albumid int(11);
+
+create table if not exists album(
+id int(11) not null auto_increment,
+userid int(11) not null,
+alname varchar(100) not null,
+des text,
+createtime datetime not null,
+coverid int(11),
+primary key(id,userid)
+)engine=myisam default charset=utf8 auto_increment=1;

@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+<head profile="http://gmpg.org/xfn/11">
+<title>Support</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link rel="stylesheet" href="styles/layout.css" type="text/css" />
+<script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.slidepanel.setup.js"></script>
+<script type="text/javascript" src="scripts/jquery.cycle.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.cycle.setup.js"></script>
+</head>
+<body>
+<div class="wrapper col0">
+  <div id="topbar">
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col1">
+  <div id="header">
+    <div id="logo">
+      <h1><a href="#">快联科技</a><span class="wrapper col2"><a href="#"><img src="images/Fast_logo.png" width="185" height="79" /></a></span></h1>
+      <p>Smaller & Faster</p>
+    </div>
+    <div id="topnav">
+      <ul>
+        <li class="active"><a href="index.php">主页</a></li>
+        <li><a href="albumlist.php">用户空间</a></li>
+		<li><a href="albums.php">专辑管理</a></li>
+        <li><a href="#">压缩下载</a></li>
+        <li class="last"><a href="comment.php">用户评论</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col2">
+  <div id="breadcrumb">
+    <ul>
+      <li class="first">首页</li>
+      <li>&#187;</li>
+      <li class="current"><a href="#">技术简介</a></li>
+    </ul>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col3">
+  <div id="container">
+ 	<div id="content">
+    <h1> 技术简介 </h1>
+	<p>快联图片压缩技术采用基于视觉容差的迭代压缩算法，可以在不损失图片视觉质量的基础之上，大幅度减小图片的存储空间。该技术基于标准的JPEG以及PNG格式，处理后的图片格式完全兼容现有的浏览器，图片处理软件及图形处理设备。</p>
+	<p>快联图片压缩技术可以将JPEG或PNG图片压缩至原图的20%大小。压缩后的图片与原图片在人眼视觉上完全一致：即使在缩放至原始图片大小时，肉眼也难以分辨出二者有任何区别。快联压缩算法模仿人类视觉系统的感知特性，确保每张图片达到最大限度的消除冗余数据。在没有人工干预的条件下，完成自动化的，最大压缩比例的图片处理工作。</p>
+	<p>快联图片压缩技术主要由以下两个部分组成：第一个是图片质量侦测器，该侦测器模仿人类视觉系统的图像识别质量，以此决定每张特定图片的最大压缩比率（该过程由算法自动完成，无需任何人工参数介入）。第二个是特有的JPEG和PNG编码器，该编码器对原始图片进行JPEG或PNG格式重新编码，在图片质量侦测器识别基础之上达到符合视觉标准的最大压缩比例。在两个模块统一整合，协调工作的基础之上，快联压缩技术可根据图片的不同分辨率和特征，将原图压缩至存储空间和视觉效果之间的完美平衡点，最高压缩比例可达80%以上。</p>
+	<p>算法压缩特性如下：</p>
+	<table summary="Summary Here" cellpadding="0" cellspacing="0">
+        <thead>
+          <tr>
+            <th>图片像素</th>
+            <th>平均压缩比率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="light">
+            <td><p >8&nbsp;MP及以上</p></td>
+            <td><p >70&nbsp;-&nbsp;80%</p></td>
+          </tr>
+          <tr class="dark">
+            <td><p >3&nbsp;-&nbsp;7&nbsp;MP</p></td>
+            <td><p >50&nbsp;-&nbsp;70%</p></td>
+          </tr>
+          <tr class="light">
+            <td><p >1&nbsp;-&nbsp;2&nbsp;MP</p></td>
+            <td><p >40&nbsp;-&nbsp;60%</p></td>
+          </tr>
+          <tr class="dark">
+            <td><p >小于1&nbsp;MP</p></td>
+            <td><p >30&nbsp;-&nbsp;50%</p></td>
+          </tr>
+        </tbody>
+      </table>
+	  <p>快联图片压缩技术基于近十年来SIGGRAPH等国际顶级会议的多篇论文，整合了国内外学术界的最新成果和一流技术，在此基础之上进行优化与改进，实现了一套为中国本土互联网企业量身定做的图片瘦身和网页加速解决方案。</p>
+	  <h5></h5>
+	  <h5>性能测试</h5>
+	  <p>目前可以在本网站获得快联图片压缩技术的免费展示功能，您可以注册用户帐户，新建图片专辑，然后在专辑中上传一个或多个JPEG或者PNG图片。上传成功以后，您可以在图片预览中下载压缩后的图片。在这里，我们上传一些自己拍摄的图片作为测试（图片拍摄相机为Canon A650is 12MP fine）。</p>
+	  <ul>
+	  <li>原始照片大小：2.42MB</li>
+	  <li>压缩后图片大小：819KB</li>
+	  <li>压缩比例：33%</li>
+	  </ul>
+	  <p>压缩前图片预览：</p>
+	  <div id="ad_section">
+	  <div> <a href="#"><img src="images/ori.jpg" alt=""  width=600/></a> </div>
+	  </div>
+	  <p>压缩后图片预览：</p>
+	  <div id="ad_section">
+	  <div> <a href="#"><img src="images/com.jpg" alt=""  width=600/></a> </div>
+	  </div>
+	  <p>放大到100%原始大小（压缩前花蕊局部细节）：</p>
+	  <div id="ad_section">
+	  <div> <a href="#"><img src="images/100ori.jpg" alt=""  width=600/></a> </div>
+	  </div>
+	  <p>放大到100%原始大小（压缩后花蕊局部细节）：</p>
+	  <div id="ad_section">
+	  <div> <a href="#"><img src="images/100com.jpg" alt=""  width=600/></a> </div>
+	  </div> 
+	  <p>放大到200%原始大小（压缩前花蕊局部细节）：</p>
+	  <div id="ad_section">
+	  <div> <a href="#"><img src="images/200ori.jpg" alt=""  width=600/></a> </div>
+	  </div> 
+	  <p>放大到200%原始大小（压缩后花蕊局部细节）：</p>
+	  <div id="ad_section">
+	  <div> <a href="#"><img src="images/200com.jpg" alt=""  width=600/></a> </div>
+	  </div> 
+	  <h5></h5>
+    </div>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col4">
+  <div id="footer">
+    <div class="footbox">
+            <h2>JPEG ComPress</h2>
+      <ul>
+        <li><a href="#">关于公司</a></li>
+		<li><a href="support.html">技术支持</a></li>
+        <li><a href="business.html">商业推广</a></li>
+         <li class="last"><a href="#">新浪微博</a></li>
+      </ul>
+    </div>
+	<div class="footbox last">
+      <h2>Community</h2>
+      <ul>
+	  	<li><a href="#">关于公司</a></li>
+<li><a href="#">技术支持</a></li>
+        <li><a href="#">商业推广</a></li>
+        <li class="last"><a href="#">新浪微博</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col5">
+  <div id="copyright">
+    <p class="fl_left">Copyright &copy; 2010 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <br class="clear" />
+  </div>
+</div>
+</body>
+</html>

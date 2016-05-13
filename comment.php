@@ -1,0 +1,182 @@
+<?php>
+session_start();
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+<head profile="http://gmpg.org/xfn/11">
+<title>JPEG ComPress</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link rel="stylesheet" href="styles/layout.css" type="text/css" />
+<script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.slidepanel.setup.js"></script>
+<script type="text/javascript" src="scripts/jquery.cycle.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.cycle.setup.js"></script>
+<script language="javascript" type="text/javascript">
+function chkfrm(o){
+   if(document.all('name').value!=""){
+   }else
+   {
+   alert("请输入用户名");
+   return;
+   }
+    if(document.all('comment').value!=""){
+   }else
+   {
+   alert("请输入评论内容");
+   return;
+   }
+   o.action='regcomment.php';
+   return;
+}
+</script>
+</head>
+<body>
+<div class="wrapper col0">
+  <div id="topbar">
+    <ul>
+        <li class="right">
+		<a id="slideit" href="#">
+		<?php
+if (empty($_SESSION['login'])) {
+    echo "您还没有登录，不能访问当前页面！";
+}
+else
+{
+	echo $_SESSION['user']." 欢迎回来！";
+}
+?></a>&nbsp;&nbsp;&nbsp;<a id="slideit" href=
+<?php
+if (!empty($_SESSION['login'])) {
+   				 echo "\"logout.php\"";
+				}  
+?>
+>
+<?php
+if(!empty($_SESSION['login'])) {
+	echo "退出登陆";
+}
+?>
+</a></li>
+      </ul>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col1">
+  <div id="header">
+    <div id="logo">
+      <h1><a href="#">快联科技</a><span class="wrapper col2"><a href="#"><img src="images/Fast_logo.png" width="185" height="79" /></a></span></h1>
+      <p>Smaller & Faster</p>
+    </div>
+    <div id="topnav">
+      <ul>
+        <li><a href="index.php">主页</a></li>
+        <li><a href="albumlist.php">用户空间</a></li>
+		<li><a href="albums.php">专辑管理</a></li>
+        <li><a href="#">压缩下载</a></li>
+        <li class= "active"><a href="comment.php">用户评论</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col2">
+  <div id="breadcrumb">
+    <ul>
+      <li class="first"><a href="#">主页</a></li>
+      <li>&#187;</li>
+      <li class="current"><a href="#">用户评论</a></li>
+    </ul>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+
+
+
+<div class="wrapper col3">
+  <div id="container">
+    <div id="content">  
+	  <div id="comments">
+        <h2>评论列表</h2>
+        <ul class="commentlist">
+		<?php
+			require('config.db.utf8.php'); 
+			$comsql = "SELECT * from comment order by id desc limit 0,10";
+			$result = mysql_query($comsql);
+			$color = 1;
+			while($row = mysql_fetch_array($result, MYSQL_NUM)){
+		?>
+          <li class= <?php if($color ==1) echo "comment_odd"; else echo "comment_even" ?>>
+            <div class="author"><img class="avatar" src="images/demo/avatar.gif" width="32" height="32" alt="" /><span class="name"><a href="#"><?php echo $row[1]; ?></a></span> <span class="wrote">说：</span></div>
+            <div class="submitdate"><a href="#"><?php echo $row[4]; ?></a></div>
+            <p><?php echo $row[3]; ?></p>
+          </li>
+		  <?php
+		  	if($color == 1) $color = 0; else $color =1;
+		   }
+		   mysql_free_result($result); 
+		   ?>
+        </ul>
+      </div>
+      <h2>我的评论</h2>
+      <div id="respond">
+        <form enctype="multipart/form-data" action="" method="post" onsubmit="javascript:chkfrm(this);">
+          <p>
+            <input type="text" name="name" id="name" value="" size="22" />
+            <label for="name"><small>昵称 (必须填)</small></label>
+          </p>
+          <p>
+            <input type="text" name="email" id="email" value="" size="22" />
+            <label for="email"><small>E-Mail</small></label>
+          </p>
+          <p>
+            <textarea name="comment" id="comment" cols="100%" rows="10"></textarea>
+            <label for="comment" style="display:none;"><small>Comment (required)</small></label>
+          </p>
+          <p>
+            <input name="submit" type="submit" id="submit" value="提交评论" />
+            &nbsp;
+            <input name="reset" type="reset" id="reset" tabindex="5" value="重置" />
+          </p>
+        </form>
+      </div>
+    </div>
+    
+    <div class="clear"></div>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col4">
+  <div id="footer">
+     <div class="footbox">
+      <h2>JPEG ComPress</h2>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">隐私策略</a></li>
+        <li><a href="#">使用条款</a></li>
+        <li class="last"><a href="#">联系我们</a></li>
+      </ul>
+    </div>
+	<div class="footbox last">
+      <h2>Community</h2>
+      <ul>
+	  	<li><a href="#">关于公司</a></li>
+		<li><a href="support.html">技术支持</a></li>
+        <li><a href="business.html">商业推广</a></li>
+         <li class="last"><a href="#">新浪微博</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col5">
+  <div id="copyright">
+    <p class="fl_left">Copyright &copy; 2010 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <br class="clear" />
+  </div>
+</div>
+</body>
+</html>
